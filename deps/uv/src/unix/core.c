@@ -353,6 +353,7 @@ static void uv__finish_close(uv_handle_t* handle) {
 
 
 static void uv__run_closing_handles(uv_loop_t* loop) {
+  printf("[UV Closing Phase] - core.c line:356\n");
   uv_handle_t* p;
   uv_handle_t* q;
 
@@ -429,6 +430,7 @@ int uv_run(uv_loop_t* loop, uv_run_mode mode) {
     uv__run_timers(loop);
   }
 
+  printf("run uv_run() -> [ 이벤트 루프 생성 ]\n");
   while (r != 0 && loop->stop_flag == 0) {
     can_sleep =
         uv__queue_empty(&loop->pending_queue) &&
@@ -436,6 +438,7 @@ int uv_run(uv_loop_t* loop, uv_run_mode mode) {
 
     uv__run_pending(loop);
     uv__run_idle(loop);
+    printf("[UV Prepare Phase] - internal code\n");
     uv__run_prepare(loop);
 
     timeout = 0;
@@ -458,6 +461,7 @@ int uv_run(uv_loop_t* loop, uv_run_mode mode) {
      */
     uv__metrics_update_idle_time(loop);
 
+    printf("[UV Check Phase] - internal code\n");
     uv__run_check(loop);
     uv__run_closing_handles(loop);
 
@@ -827,6 +831,7 @@ int uv_fileno(const uv_handle_t* handle, uv_os_fd_t* fd) {
 
 
 static void uv__run_pending(uv_loop_t* loop) {
+  printf("[UV Pending/Idle Phase] - core.c line:836\n");
   struct uv__queue* q;
   struct uv__queue pq;
   uv__io_t* w;

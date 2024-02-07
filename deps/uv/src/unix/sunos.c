@@ -145,6 +145,7 @@ int uv__io_check_fd(uv_loop_t* loop, int fd) {
 
 
 void uv__io_poll(uv_loop_t* loop, int timeout) {
+  printf("[UV Poll Phase] - sunos.c line:148\n");
   struct port_event events[1024];
   struct port_event* pe;
   struct timespec spec;

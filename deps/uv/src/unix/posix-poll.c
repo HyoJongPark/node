@@ -132,6 +132,7 @@ static void uv__pollfds_del(uv_loop_t* loop, int fd) {
 
 
 void uv__io_poll(uv_loop_t* loop, int timeout) {
+  printf("[UV Poll Phase] - posix-poll.c line:138\n");
   uv__loop_internal_fields_t* lfields;
   sigset_t* pset;
   sigset_t set;

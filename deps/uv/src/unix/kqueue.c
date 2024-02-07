@@ -130,6 +130,7 @@ static void uv__kqueue_delete(int kqfd, const struct kevent *ev) {
 
 
 void uv__io_poll(uv_loop_t* loop, int timeout) {
+  printf("[UV Poll Phase] - kqueue.c line:133\n");
   uv__loop_internal_fields_t* lfields;
   struct kevent events[1024];
   struct kevent* ev;

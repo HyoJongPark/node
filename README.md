@@ -11,4 +11,5 @@ Node.js의 동작 원리를 이해하기 위해 만든 저장소입니다.
 
 ### 참고
 
-[korECM님의 레포](https://github.com/korECM/node)
+[korECM님의 레포](https://github.com/korECM/node) \
+[멍개의 연구소 블로그](https://blog.naver.com/pjt3591oo/221976414901)

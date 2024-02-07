@@ -161,6 +161,7 @@ int uv__next_timeout(const uv_loop_t* loop) {
 
 
 void uv__run_timers(uv_loop_t* loop) {
+  printf("[UV Timer Phase] - timer.c line:164\n");
   struct heap_node* heap_node;
   uv_timer_t* handle;
 

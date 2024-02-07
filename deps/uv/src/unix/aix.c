@@ -131,6 +131,7 @@ int uv__io_check_fd(uv_loop_t* loop, int fd) {
 
 
 void uv__io_poll(uv_loop_t* loop, int timeout) {
+  printf("[UV Poll Phase] - aix.c line:134\n");
   uv__loop_internal_fields_t* lfields;
   struct pollfd events[1024];
   struct pollfd pqry;
